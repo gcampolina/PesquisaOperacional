@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Dieta Vegana</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <div class="config-container">
+        <a style="text-decoration: none;" href="{% url 'config' %}" class="config-button">
+            ⚙️
+        </a>
+    </div>
+    
+    <div class="background">
+        <div class="container">
+            <h1>Calculadora de Dieta Vegana</h1>
+            <form action="{% url 'resultados' %}" method="get">
+                <label for="calorias">Calorias (kcal):</label>
+                <input type="number" id="calorias" placeholder="2400">
+
+                <label for="gorduras">Gorduras (g):</label>
+                <input type="number" id="gorduras" placeholder="50">
+
+                <label for="proteinas">Proteínas (g):</label>
+                <input type="number" id="proteinas" placeholder="25">
+
+                <label for="carboidratos">Carboidratos (g):</label>
+                <input type="number" id="carboidratos" placeholder="100">
+
+                <label for="ferro">Ferro (g):</label>
+                <input type="number" id="ferro" placeholder="4">
+
+                <label for="calcio">Cálcio (g):</label>
+                <input type="number" id="calcio" placeholder="8">
+
+                <label for="vitamina-c">Vitamina C (g):</label>
+                <input type="number" id="vitamina-c" placeholder="200">
+
+                <label for="fibra">Fibra (g):</label>
+                <input type="number" id="fibra" placeholder="10">
+
+                <label for="sodio">Sódio (g):</label>
+                <input type="number" id="sodio" placeholder="2">
+
+                <button type="submit">Calcular</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

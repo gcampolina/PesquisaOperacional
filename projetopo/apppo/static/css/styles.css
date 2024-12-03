@@ -1,0 +1,136 @@
+/* Configurações gerais */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+/* Fundo da página */
+.background {
+    background: url('https://wallpapers.com/images/hd/fruit-background-0t5s9258bgbnfoi6.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container da calculadora */
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+}
+
+/* Título */
+.container h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Labels e inputs */
+form label {
+    font-size: 0.9rem;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    
+}
+
+/* Botão */
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Estilização do botão de configuração */
+.config-container {
+    position: absolute; /* Para posicionar em relação ao canto da página */
+    top: 10px;
+    right: 10px;
+}
+
+.config-button {
+    display: flex; /* Usa Flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 25%; /* Botão redondo */
+    padding: 10px; /* Tamanho interno */
+    font-size: 30px; /* Tamanho do ícone ⚙️ */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    transition: all 0.3s ease; /* Animação ao passar o mouse */
+}
+
+/* Efeito hover */
+.config-button:hover {
+    background-color: #f0f0f0; /* Fundo mais claro ao passar o mouse */
+    border-color: #888; /* Cor da borda ao passar o mouse */
+}
+
+/* Efeito ao pressionar */
+.config-button:active {
+    background-color: #e0e0e0; /* Fundo mais escuro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Aumenta a largura relativa */
+        padding: 15px; /* Reduz o espaçamento interno */
+    }
+    .config-container {
+        top: 5px; /* Reduz a distância do topo */
+        right: 5px; /* Reduz a distância da borda direita */
+    }
+
+    .config-button {
+        width: 40px; /* Reduz o tamanho do botão */
+        height: 40px; /* Reduz a altura do botão */
+        font-size: 20px; /* Reduz o tamanho do ícone ⚙️ */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%; /* Ocupa toda a largura da tela */
+        padding: 10px; /* Espaçamento interno menor */
+        border-radius: 4px; /* Bordas mais suaves */
+    }
+    .config-container {
+        top: 2px; /* Ainda menor no topo */
+        right: 2px; /* Ajusta para telas muito pequenas */
+    }
+
+    .config-button {
+        width: 35px; /* Botão menor */
+        height: 35px;
+        font-size: 18px;
+    }
+}
