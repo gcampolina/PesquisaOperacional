@@ -25,9 +25,16 @@
                 <label for="calorias">Calorias (kcal):</label>
                 <input type="number" name="calorias" id="calorias" value="2400">
 
-                <label for="lipidios">Gorduras (g):</label>
-                <input type="number"  name="lipidios_min" id="lipidios" value="50">
-                <input type="number"  name="lipidios_max" id="lipidios" value="500">
+                <div class="div-wrapper">
+                    <div>
+                        <label for="lipidios_min">Gorduras Minimo(g):</label>
+                        <input type="number"  name="lipidios_min" id="lipidios" value="50" class="dual">
+                    </div>
+                    <div>
+                        <label for="lipidios_max">Gorduras Máximo(g):</label>
+                        <input type="number"  name="lipidios_max" id="lipidios" value="500" class="dual">
+                    </div>
+                </div>
 
                 <label for="proteinas">Proteínas (g):</label>
                 <input type="number" name="proteinas" id="proteinas" value="25">
@@ -47,9 +54,17 @@
                 <label for="fibra">Fibra (g):</label>
                 <input type="number" name="fibra" id="fibra" value="10">
 
-                <label for="sodio">Sódio (mg):</label>
-                <input type="number" name="sodio_min" id="sodio" value="200">
-                <input type="number" name="sodio_max" id="sodio" value="2000">
+                <div class="div-wrapper">
+                    <div>
+                        
+                    <label for="sodio_min">Sódio Mínimo(mg):</label>
+                    <input type="number" name="sodio_min" id="sodio" value="200">
+                    </div>
+                    <div>
+                    <label for="sodio_max">Sódio Máximo(mg):</label>
+                    <input type="number" name="sodio_max" id="sodio" value="2000">
+                    </div>
+                </div>
 
                 <button type="submit">Calcular</button>
             </form>

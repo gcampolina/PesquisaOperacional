@@ -10,6 +10,7 @@ body, html {
 table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 50%;
 }
 
 th, td {
@@ -79,6 +80,17 @@ form input {
     
 }
 
+.div-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    
+}
+.div-wrapper input{
+}
+
 /* Botão */
 form button {
     background-color: #4CAF50;
@@ -125,6 +137,9 @@ form button:hover {
 .config-button:active {
     background-color: #e0e0e0; /* Fundo mais escuro */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
+}
+.recalcular{
+    margin-top: 12px ;
 }
 
 /* Ajustes para telas menores */

@@ -12,5 +12,5 @@ class FileSelectionForm(forms.Form):
     file = forms.ModelChoiceField(
         queryset=FileUpload.objects.all(),
         empty_label="Selecione um arquivo",
-        label="Arquivo Existente"
+        label="Base de dados:"
     )
