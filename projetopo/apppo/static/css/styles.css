@@ -6,6 +6,34 @@ body, html {
     height: 100%;
 }
 
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Header Background */
+thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+/* Row Stripes */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
 /* Fundo da página */
 .background {
     background: url('https://wallpapers.com/images/hd/fruit-background-0t5s9258bgbnfoi6.jpg') no-repeat center center/cover;

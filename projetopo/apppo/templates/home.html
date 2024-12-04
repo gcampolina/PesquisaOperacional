@@ -18,33 +18,35 @@
     <div class="background">
         <div class="container">
             <h1>Calculadora de Dieta Vegana</h1>
-            <form action="{% url 'resultados' %}" method="get">
+            <form action="/resultados" method="GET">
                 <label for="calorias">Calorias (kcal):</label>
-                <input type="number" id="calorias" placeholder="2400">
+                <input type="number" name="calorias" id="calorias" value="2400">
 
-                <label for="gorduras">Gorduras (g):</label>
-                <input type="number" id="gorduras" placeholder="50">
+                <label for="lipidios">Gorduras (g):</label>
+                <input type="number"  name="lipidios_min" id="lipidios" value="50">
+                <input type="number"  name="lipidios_max" id="lipidios" value="500">
 
                 <label for="proteinas">Proteínas (g):</label>
-                <input type="number" id="proteinas" placeholder="25">
+                <input type="number" name="proteinas" id="proteinas" value="25">
 
                 <label for="carboidratos">Carboidratos (g):</label>
-                <input type="number" id="carboidratos" placeholder="100">
+                <input type="number" name="carboidratos" id="carboidratos" value="100">
 
-                <label for="ferro">Ferro (g):</label>
-                <input type="number" id="ferro" placeholder="4">
+                <label for="ferro">Ferro (mg):</label>
+                <input type="number" name="ferro" id="ferro" value="4">
 
                 <label for="calcio">Cálcio (g):</label>
-                <input type="number" id="calcio" placeholder="8">
+                <input type="number" name="calcio" id="calcio" value="8">
 
-                <label for="vitamina-c">Vitamina C (g):</label>
-                <input type="number" id="vitamina-c" placeholder="200">
+                <label for="vitamina-c">Vitamina C (mg):</label>
+                <input type="number" name="vitamina-c" id="vitamina-c" value="200">
 
                 <label for="fibra">Fibra (g):</label>
-                <input type="number" id="fibra" placeholder="10">
+                <input type="number" name="fibra" id="fibra" value="10">
 
-                <label for="sodio">Sódio (g):</label>
-                <input type="number" id="sodio" placeholder="2">
+                <label for="sodio">Sódio (mg):</label>
+                <input type="number" name="sodio_min" id="sodio" value="200">
+                <input type="number" name="sodio_max" id="sodio" value="2000">
 
                 <button type="submit">Calcular</button>
             </form>

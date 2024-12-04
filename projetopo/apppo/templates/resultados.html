@@ -13,11 +13,22 @@
     <div class="background">
         <div class="container">
             <h1>Resultado</h1>
+            <table clas = "table">
+                <thead class="table-light">
+                    <tr>
+                        <th>Alimento</th> 
+                        <th>Quantidade(g)</th>
+                    </tr>
+                </thead>
+            {% for resultado in resultados %}
+            <tr> 
+            <td>{{resultado.item }}</td>
+            <td>{{resultado.value }}</td>
+            </tr>
+            {% endfor %}
+            </table>
+            
             <form action="{% url 'home' %}" method="get">
-                
-                
-
-
                 <button type="submit">Calcular Novamente</button>
             </form>
         </div>
