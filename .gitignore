@@ -1,2 +1,5 @@
 
 projetopo/db.sqlite3
+/projetopo/media
+projetopo/db.sqlite3
+*.sqlite3
