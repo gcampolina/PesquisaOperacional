@@ -98,7 +98,7 @@ form button:hover {
 .config-container {
     position: absolute; /* Para posicionar em relação ao canto da página */
     top: 10px;
-    right: 10px;
+    left: 10px;
 }
 
 .config-button {

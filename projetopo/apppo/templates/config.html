@@ -10,15 +10,21 @@
 <body>
 
     
+
+    <div class="config-container">
+        <a style="text-decoration: none;" href="{% url 'home' %}" class="config-button">
+            🏠
+        </a>
+    </div>
+
     <div class="background">
         <div class="container">
             <h1>Configurações</h1>
-            <form action="{% url 'home' %}" method="get">
-                
-                <p>Fonte de dados:</p> 
-
-
-                <button type="submit">Salvar</button>
+            <h2>Faça aqui o upload de uma nova fonte de dados</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Enviar</button>
             </form>
         </div>
     </div>

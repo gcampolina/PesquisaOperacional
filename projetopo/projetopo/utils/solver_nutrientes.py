@@ -1,11 +1,13 @@
 from ortools.linear_solver import pywraplp
+from projetopo import settings
 from projetopo.utils.ler_csv import ler_csv
 import os
 
-def solver_nutrientes(nutrientes):
+def solver_nutrientes(nutrientes,filename):
 
-    pasta_atual = os.path.dirname(os.path.abspath(__file__))
-    diretorio = os.path.join(pasta_atual, "taco.csv")
+    
+    diretorio = os.path.join(settings.MEDIA_ROOT,"uploads", filename)
+
     data = ler_csv(diretorio)
     #print(data)
 

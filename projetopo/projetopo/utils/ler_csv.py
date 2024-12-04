@@ -3,6 +3,7 @@ import builtins
 
 def ler_csv(dir):
   with builtins.open(dir,"r") as arquivo_csv:
+
     leitor = csv.DictReader(arquivo_csv)
 
     # Inicializa um dicionário para armazenar os dados

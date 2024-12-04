@@ -1,5 +1,8 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import FileSelectionForm, FileUploadForm
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+from .models import FileUpload
 from projetopo.utils.solver_nutrientes import solver_nutrientes
 
 
@@ -7,10 +10,19 @@ from projetopo.utils.solver_nutrientes import solver_nutrientes
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    form = FileSelectionForm()
+    return render(request, 'home.html',{'form': form})
 
 def config(request):
-    return render(request, 'config.html')
+    if request.method == 'POST':
+        form = FileUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = FileUploadForm()
+    return render(request, 'config.html', {'form': form})
+    
 
 def resultados(request):
     params = request.GET
@@ -25,12 +37,16 @@ def resultados(request):
     ["Sodio",int(params.get("sodio_min")),int(params.get("sodio_max"))],
     ["Vitamina C",int(params.get("vitamina-c")),-1]
     ]
+    file_id = params.get("file")
+    file = get_object_or_404(FileUpload, id=file_id)
+    base_name = file.file.name.split('/')[-1]
 
-
-    resultados = solver_nutrientes(nutrientes)
+    try:
+        resultados = solver_nutrientes(nutrientes,base_name)
+    except:
+        return render(request, 'erro.html')
     total = 0
     for resultado in resultados:
         total = total + resultado['price']
-    print( total)
+    total = round(total, 2)
     return render(request, 'resultados.html', {"resultados":resultados, "total":total})
-

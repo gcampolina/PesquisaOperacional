@@ -8,7 +8,8 @@ urlpatterns = [
     path('', views.home, name='home'),  # URL da página inicial
     path('config/', views.config, name='config'),  # URL da página config
     path('resultados/', views.resultados, name='resultados'),  # URL da página resultados
-]
+   
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

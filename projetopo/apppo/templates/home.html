@@ -19,6 +19,9 @@
         <div class="container">
             <h1>Calculadora de Dieta Vegana</h1>
             <form action="/resultados" method="GET">
+                {% csrf_token %}
+                {{ form.as_p }}
+
                 <label for="calorias">Calorias (kcal):</label>
                 <input type="number" name="calorias" id="calorias" value="2400">
 
