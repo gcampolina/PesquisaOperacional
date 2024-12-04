@@ -1,7 +1,8 @@
 from ortools.linear_solver import pywraplp
-from projetopo import settings
 from projetopo.utils.ler_csv import ler_csv
 import os
+
+from django.conf import settings
 
 def solver_nutrientes(nutrientes,filename):
 
@@ -65,5 +66,7 @@ def solver_nutrientes(nutrientes,filename):
         if food.solution_value() > 0.0:
             result.append({"item":food.name(), "value":round(food.solution_value() * 100,2), "price": round(food.solution_value() * data[i][1],2)})
     print(result)
+
+
     print("_________________")
     return result

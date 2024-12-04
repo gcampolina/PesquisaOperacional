@@ -112,7 +112,13 @@ form button:hover {
     top: 10px;
     left: 10px;
 }
-
+.button-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
 .config-button {
     display: flex; /* Usa Flexbox para centralizar o conteúdo */
     justify-content: center; /* Centraliza horizontalmente */

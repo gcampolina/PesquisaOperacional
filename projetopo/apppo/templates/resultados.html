@@ -41,11 +41,17 @@
                 <td></td>
                 <td>R${{total}}</td>
             </tr>
-            </table>
             
+            </table>
+            <div class="button-container">
+                <form action="{% url 'home' %}media/{{filename}}" method="get">
+                <button type="submit" class="recalcular">Download</button>
+            </form>
             <form action="{% url 'home' %}" method="get">
                 <button type="submit" class="recalcular">Calcular Novamente</button>
             </form>
+            </div>
+            
         </div>
     </div>
 </body>

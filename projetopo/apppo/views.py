@@ -4,7 +4,9 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from .models import FileUpload
 from projetopo.utils.solver_nutrientes import solver_nutrientes
-
+from datetime import datetime
+import pandas as pd
+import os
 
 
 # Create your views here.
@@ -49,4 +51,11 @@ def resultados(request):
     for resultado in resultados:
         total = total + resultado['price']
     total = round(total, 2)
-    return render(request, 'resultados.html', {"resultados":resultados, "total":total})
+
+    df = pd.DataFrame(resultados)
+
+    # Salvar o DataFrame em um arquivo Excel
+    filename =  datetime.today().strftime('%Y-%m-%d %H:%M:%S')+".xlsx"
+    df.to_excel(os.path.join(settings.MEDIA_ROOT,filename), index=False)
+
+    return render(request, 'resultados.html', {"resultados":resultados, "total":total,"filename":filename})
