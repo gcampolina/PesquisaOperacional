@@ -61,7 +61,7 @@ def solver_nutrientes(nutrientes):
     result = []
     for i, food in enumerate(foods):
         if food.solution_value() > 0.0:
-            result.append({"item":food.name(), "value":food.solution_value() * 100})
+            result.append({"item":food.name(), "value":round(food.solution_value() * 100,2), "price": round(food.solution_value() * data[i][1],2)})
     print(result)
     print("_________________")
     return result

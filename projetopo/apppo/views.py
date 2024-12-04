@@ -28,6 +28,9 @@ def resultados(request):
 
 
     resultados = solver_nutrientes(nutrientes)
-
-    return render(request, 'resultados.html', {"resultados":resultados})
+    total = 0
+    for resultado in resultados:
+        total = total + resultado['price']
+    print( total)
+    return render(request, 'resultados.html', {"resultados":resultados, "total":total})
 

@@ -18,14 +18,21 @@
                     <tr>
                         <th>Alimento</th> 
                         <th>Quantidade(g)</th>
+                        <th>Preço</th>
                     </tr>
                 </thead>
             {% for resultado in resultados %}
             <tr> 
             <td>{{resultado.item }}</td>
             <td>{{resultado.value }}</td>
+            <td>R${{resultado.price}}</td>
             </tr>
             {% endfor %}
+            <tr>
+                <td>Total: </td>
+                <td></td>
+                <td>R${{total}}</td>
+            </tr>
             </table>
             
             <form action="{% url 'home' %}" method="get">
