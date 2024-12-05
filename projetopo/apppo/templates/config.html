@@ -20,12 +20,25 @@
     <div class="background">
         <div class="container">
             <h1>Configurações</h1>
-            <h2>Faça aqui o upload de uma nova fonte de dados</h2>
-            <form method="post" enctype="multipart/form-data">
+            <div>
+                <h3>Baixe aqui o arquivo de exemplo de fonte de dados:</h3>
+            <form action="{%url 'home'%}media/uploads/taco.csv" >
+                <button type="submit" class="">Donwload</button>
+            </form>
+            </div>
+            <div>
+                <h3>Faça aqui o upload de uma nova fonte de dados</h3>
+            
+                <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Enviar</button>
             </form>
+            </div>
+            
+           
+            
+
         </div>
     </div>
 </body>
